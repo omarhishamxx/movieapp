@@ -17,7 +17,9 @@ class CustomNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, "/");
+            },
             child: Icon(
               Icons.home,
               size: 35,
@@ -25,7 +27,9 @@ class CustomNavBar extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, "SearchPage");
+            },
             child: Icon(
               Icons.search,
               size: 35,

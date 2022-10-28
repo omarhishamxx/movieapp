@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movietest1/pages/HomePage.dart';
+import 'package:movietest1/pages/SearchPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,6 +26,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFF0F111D)),
       routes: {
         "/": (context) => HomePage(),
+        "SearchPage": (context) => SearchPage(),
       },
     );
   }
