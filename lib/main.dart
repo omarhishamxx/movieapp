@@ -7,7 +7,6 @@ import 'package:movietest1/pages/SearchPage.dart';
 import 'package:movietest1/pages/Signup.dart';
 import 'package:movietest1/pages/UserPage.dart';
 import 'package:movietest1/pages/register.dart';
-
 import 'pages/forgetpassword.dart';
 
 void main() {
