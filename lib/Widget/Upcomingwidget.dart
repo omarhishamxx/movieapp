@@ -34,13 +34,13 @@ class Upcomingwidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              for (int i = 1; i <= 4; i++)
+              for (int i = 1; i <= 5; i++)
                 Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
-                        "images/a$i.jpg",
+                        "images/a$i.png",
                         height: 180,
                         width: 300,
                         fit: BoxFit.cover,
