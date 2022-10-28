@@ -15,7 +15,7 @@ class _ForgetPassState extends State<Forgetpass> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("images/backn.png"), fit: BoxFit.cover),
+            image: AssetImage("images/back2.jpg"), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -62,7 +62,9 @@ class _ForgetPassState extends State<Forgetpass> {
                               Text(
                                 'Sign in',
                                 style: TextStyle(
-                                    fontSize: 27, fontWeight: FontWeight.w700),
+                                    color: Colors.white,
+                                    fontSize: 27,
+                                    fontWeight: FontWeight.w700),
                               ),
                               CircleAvatar(
                                 radius: 30,
@@ -97,7 +99,7 @@ class _ForgetPassState extends State<Forgetpass> {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Color(0xff4c505b),
+                                      color: Colors.white,
                                       fontSize: 18),
                                 ),
                                 style: ButtonStyle(),
