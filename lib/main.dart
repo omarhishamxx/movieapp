@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movietest1/pages/FavPage.dart';
 import 'package:movietest1/pages/HomePage.dart';
+import 'package:movietest1/pages/Login.dart';
 import 'package:movietest1/pages/SearchPage.dart';
 import 'package:movietest1/pages/Signup.dart';
 import 'package:movietest1/pages/UserPage.dart';
-import 'package:movietest1/pages/try.dart';
 
 void main() {
   runApp(MyApp());
