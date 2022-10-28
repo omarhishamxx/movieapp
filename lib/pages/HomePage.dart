@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Netflox",
+                          "Netfloxyyyy",
                           style: TextStyle(
                             color: Color.fromARGB(255, 229, 43, 18),
                             fontSize: 30,
