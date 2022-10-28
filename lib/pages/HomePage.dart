@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movietest1/Widget/CustomNavBar.dart';
 import 'package:movietest1/Widget/Upcomingwidget.dart';
 
 import '../Widget/NewMoviesWidget.dart';
@@ -85,6 +86,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: CustomNavBar(),
     );
   }
 }
