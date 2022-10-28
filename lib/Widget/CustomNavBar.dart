@@ -31,7 +31,7 @@ class CustomNavBar extends StatelessWidget {
               Navigator.pushNamed(context, "SearchPage");
             },
             child: Icon(
-              Icons.search,
+              Icons.whatshot,
               size: 35,
               color: Colors.white,
             ),
