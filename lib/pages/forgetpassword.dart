@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:movietest1/Widget/CustomNavBar.dart';
 import 'package:movietest1/pages/SearchPage.dart';
 import 'package:movietest1/pages/Signup.dart';
-import 'package:movietest1/pages/forgetpassword.dart';
 import 'package:movietest1/pages/register.dart';
 
-class MyLogin extends StatefulWidget {
+class Forgetpass extends StatefulWidget {
   @override
-  _MyLoginState createState() => _MyLoginState();
+  _ForgetPassState createState() => _ForgetPassState();
 }
 
-class _MyLoginState extends State<MyLogin> {
+class _ForgetPassState extends State<Forgetpass> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,9 +23,9 @@ class _MyLoginState extends State<MyLogin> {
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 35, top: 100),
+              padding: EdgeInsets.only(left: 20, top: 60),
               child: Text(
-                'Welcome\nBack',
+                'opps!                             you still can get your account back',
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),
@@ -53,17 +52,6 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                           SizedBox(
                             height: 30,
-                          ),
-                          TextField(
-                            style: TextStyle(),
-                            obscureText: true,
-                            decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Password",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
                           ),
                           SizedBox(
                             height: 40,
@@ -102,10 +90,10 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'MyRegister');
+                                  Navigator.pushNamed(context, 'MyLogin');
                                 },
                                 child: Text(
-                                  'Sign Up',
+                                  'Sign In',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
@@ -114,18 +102,6 @@ class _MyLoginState extends State<MyLogin> {
                                 ),
                                 style: ButtonStyle(),
                               ),
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, "Forgetpass");
-                                  },
-                                  child: Text(
-                                    'Forgot Password',
-                                    style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Color(0xff4c505b),
-                                      fontSize: 18,
-                                    ),
-                                  )),
                             ],
                           )
                         ],

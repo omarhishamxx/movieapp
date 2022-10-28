@@ -6,6 +6,9 @@ import 'package:movietest1/pages/Login.dart';
 import 'package:movietest1/pages/SearchPage.dart';
 import 'package:movietest1/pages/Signup.dart';
 import 'package:movietest1/pages/UserPage.dart';
+import 'package:movietest1/pages/register.dart';
+
+import 'pages/forgetpassword.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,8 +36,10 @@ class _MyAppState extends State<MyApp> {
         "SearchPage": (context) => SearchPage(),
         "FavPage": (context) => FavPage(),
         "UserPage": (context) => UserPage(),
-        "LoginScreen": (context) => LoginScreen(),
+        "MyLogin": (context) => MyLogin(),
         "signupScreen": (context) => signupScreen(),
+        "MyRegister": (context) => MyRegister(),
+        "Forgetpass": (context) => Forgetpass(),
       },
     );
   }

@@ -48,7 +48,7 @@ class CustomNavBar extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "LoginScreen");
+              Navigator.pushNamed(context, "MyLogin");
             },
             child: Icon(
               Icons.person,
