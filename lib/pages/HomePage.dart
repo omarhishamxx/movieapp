@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Netfloxyyyy",
+                          "Movie Night",
                           style: TextStyle(
                             color: Color.fromARGB(255, 229, 43, 18),
                             fontSize: 30,
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "What to watch",
+                          "What to watch?",
                           style: TextStyle(
                             color: Colors.white54,
                           ),
