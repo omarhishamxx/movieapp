@@ -32,7 +32,7 @@ class Upcomingwidget extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               for (int i = 1; i <= 5; i++)
                 Padding(

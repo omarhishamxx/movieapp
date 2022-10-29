@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:movietest1/pages/Adminpan.dart';
 import 'package:movietest1/pages/FavPage.dart';
 import 'package:movietest1/pages/HomePage.dart';
 import 'package:movietest1/pages/Login.dart';
@@ -39,6 +40,7 @@ class _MyAppState extends State<MyApp> {
         "signupScreen": (context) => signupScreen(),
         "MyRegister": (context) => MyRegister(),
         "Forgetpass": (context) => Forgetpass(),
+        "AdminPan": (context) => AdminPan(),
       },
     );
   }
