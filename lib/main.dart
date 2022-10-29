@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:movietest1/pages/FavPage.dart';
 import 'package:movietest1/pages/HomePage.dart';
 import 'package:movietest1/pages/Login.dart';
-import 'package:movietest1/pages/SearchPage.dart';
+import 'package:movietest1/pages/RecommPage.dart';
 import 'package:movietest1/pages/Signup.dart';
 import 'package:movietest1/pages/UserPage.dart';
 import 'package:movietest1/pages/register.dart';
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(scaffoldBackgroundColor: Color(0xFF0F111D)),
       routes: {
         "/": (context) => HomePage(),
-        "SearchPage": (context) => SearchPage(),
+        "RecommPage": (context) => RecommPage(),
         "FavPage": (context) => FavPage(),
         "UserPage": (context) => UserPage(),
         "MyLogin": (context) => MyLogin(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movietest1/Widget/CustomNavBar.dart';
 
-class FavPage extends StatelessWidget {
+class RecommPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,7 @@ class FavPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Likes",
+                          "Recommendation",
                           style: TextStyle(
                             color: Color.fromARGB(255, 229, 43, 18),
                             fontSize: 30,
@@ -26,7 +26,7 @@ class FavPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "Wow these movies seems fun",
+                          "Choose from the following",
                           style: TextStyle(
                             color: Colors.blueGrey,
                             fontSize: 15,

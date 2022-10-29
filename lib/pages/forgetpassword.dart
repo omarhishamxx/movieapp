@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movietest1/Widget/CustomNavBar.dart';
-import 'package:movietest1/pages/SearchPage.dart';
+import 'package:movietest1/pages/RecommPage.dart';
 import 'package:movietest1/pages/Signup.dart';
 import 'package:movietest1/pages/register.dart';
 
@@ -76,7 +76,7 @@ class _ForgetPassState extends State<Forgetpass> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  SearchPage()));
+                                                  RecommPage()));
                                     },
                                     icon: Icon(
                                       Icons.arrow_forward,

@@ -25,29 +25,23 @@ class NewMoviesWidget extends StatelessWidget {
         SizedBox(height: 15),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Row(children: [
-            InkWell(
-              onTap: () {},
-              child: Container(
-                  width: 190,
-                  height: 300,
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    color: Color(0xff292B37),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0xFF29282B37).withOpacity(0.5),
-                        spreadRadius: 5,
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [],
-                  )),
-            )
-          ]),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              for (int i = 1; i <= 5; i++)
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset(
+                        "images/c$i.jpg",
+                        height: 180,
+                        width: 300,
+                        fit: BoxFit.cover,
+                      )),
+                )
+            ],
+          ),
         )
       ],
     );

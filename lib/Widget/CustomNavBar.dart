@@ -28,7 +28,7 @@ class CustomNavBar extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "SearchPage");
+              Navigator.pushNamed(context, "RecommPage");
             },
             child: Icon(
               Icons.whatshot,
