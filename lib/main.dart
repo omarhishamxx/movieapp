@@ -41,6 +41,7 @@ class _MyAppState extends State<MyApp> {
         "MyRegister": (context) => MyRegister(),
         "Forgetpass": (context) => Forgetpass(),
         "AdminPan": (context) => AdminPan(),
+        //test
       },
     );
   }
