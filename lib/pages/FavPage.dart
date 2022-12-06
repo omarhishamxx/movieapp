@@ -42,7 +42,7 @@ class FavPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomNavBar(),
+      //bottomNavigationBar: CustomNavBar(),
     );
   }
 }
