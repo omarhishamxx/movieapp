@@ -22,7 +22,7 @@ class NewMoviesWidget extends StatelessWidget {
                 ))
           ]),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: 25),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
