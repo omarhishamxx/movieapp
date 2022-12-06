@@ -46,7 +46,7 @@ class _signupScreenState extends State<signupScreen> {
                             Text(
                               ' NAME',
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 229, 43, 18),
+                                  color: Color.fromARGB(255, 229, 43, 19),
                                   fontSize: 20),
                             )
                           ],
