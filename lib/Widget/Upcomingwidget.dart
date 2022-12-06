@@ -14,7 +14,7 @@ class Upcomingwidget extends StatelessWidget {
                 "Upcoming Movies",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 25,
+                  fontSize: 26,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -34,7 +34,7 @@ class Upcomingwidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              for (int i = 1; i <= 5; i++)
+              for (int i = 1; i <= 6; i++)
                 Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: ClipRRect(
