@@ -1,40 +1,92 @@
 import 'package:flutter/material.dart';
-import 'package:movietest1/Widget/CustomNavBar.dart';
 
-class RecommPage extends StatelessWidget {
+class CategoryPage extends StatefulWidget {
+  @override
+  State<CategoryPage> createState() => _CategoryPageState();
+}
+
+class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 18, horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Recommendation",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 229, 43, 18),
-                            fontSize: 30,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Text(
-                          "Choose from the following",
-                          style: TextStyle(
-                            color: Colors.blueGrey,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.blueGrey,
+                        size: 30,
+                      ),
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      'Discover',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 19, vertical: 13),
+                child: Column(
+                  children: [
+                    for (int i = 1; i < 11; i++)
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(boxShadow: [
+                                BoxShadow(
+                                    color: Colors.blueGrey,
+                                    spreadRadius: 2,
+                                    blurRadius: 3),
+                              ]),
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'images/$i.jpeg',
+                                  width: 90,
+                                  height: 90,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 18,
+                            ),
+                            Text(
+                              'Category',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Spacer(),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.white,
+                              size: 25,
+                            )
+                          ],
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -42,7 +94,6 @@ class RecommPage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomNavBar(),
     );
   }
 }
