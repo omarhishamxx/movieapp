@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movietest1/Widget/CustomNavBar.dart';
+import 'package:movietest1/Widget/widget.dart';
+import 'package:movietest1/pages/pages.dart';
 
 class AdminPan extends StatelessWidget {
+  const AdminPan({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +58,7 @@ class AdminPan extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomNavBar(),
+      //bottomNavigationBar: CustomNavBar(),
     );
   }
 }
