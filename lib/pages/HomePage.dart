@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
                         Text(
                           "Movie Night",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 229, 43, 18),
+                            color: Color.fromARGB(255, 229, 43, 20),
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
                           ),
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   color: Color(0xFF292B37),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(11),
                 ),
                 child: Row(children: [
                   Icon(
