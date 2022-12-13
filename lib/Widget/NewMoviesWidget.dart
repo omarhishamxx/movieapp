@@ -18,7 +18,7 @@ class NewMoviesWidget extends StatelessWidget {
             Text("See all",
                 style: TextStyle(
                   color: Colors.white54,
-                  fontSize: 15,
+                  fontSize: 17,
                 ))
           ]),
         ),
@@ -35,7 +35,7 @@ class NewMoviesWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         "images/c$i.jpg",
-                        height: 180,
+                        height: 185,
                         width: 300,
                         fit: BoxFit.cover,
                       )),
