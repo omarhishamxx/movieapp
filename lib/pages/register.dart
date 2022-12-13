@@ -25,7 +25,7 @@ class _MyRegisterState extends State<MyRegister> {
         body: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 35, top: 30),
+              padding: EdgeInsets.only(left: 34, top: 31),
               child: Text(
                 'Create\nAccount',
                 style: TextStyle(color: Colors.white, fontSize: 33),
