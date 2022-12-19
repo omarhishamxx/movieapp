@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 
+//new movies
 class NewMoviesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
