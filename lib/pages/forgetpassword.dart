@@ -1,8 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:movietest1/Widget/CustomNavBar.dart';
-import 'package:movietest1/pages/RecommPage.dart';
-import 'package:movietest1/pages/Signup.dart';
-import 'package:movietest1/pages/register.dart';
+import 'package:movietest1/Widget/widget.dart';
+import 'package:movietest1/pages/pages.dart';
 
 class Forgetpass extends StatefulWidget {
   const Forgetpass({super.key});
@@ -12,6 +11,29 @@ class Forgetpass extends StatefulWidget {
 
 class _ForgetPassState extends State<Forgetpass> {
   final formkey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
+
+  Future PasswordReset() async {
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: _emailController.text.trim());
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(e.message.toString()),
+            );
+          });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,14 +73,7 @@ class _ForgetPassState extends State<Forgetpass> {
                             child: Column(
                               children: [
                                 TextFormField(
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                            .hasMatch(value)) {
-                                      return "Enter Correct Email";
-                                    } else
-                                      return null;
-                                  },
+                                  controller: _emailController,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
                                       fillColor: Colors.grey.shade100,
@@ -78,15 +93,8 @@ class _ForgetPassState extends State<Forgetpass> {
                             height: 40,
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Text(
-                                'Sign in',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 27,
-                                    fontWeight: FontWeight.w700),
-                              ),
                               CircleAvatar(
                                 radius: 30,
                                 backgroundColor: Color(0xff4c505b),
@@ -94,15 +102,11 @@ class _ForgetPassState extends State<Forgetpass> {
                                     color: Colors.white,
                                     onPressed: () {
                                       if (formkey.currentState!.validate()) {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    MyLogin()));
+                                        PasswordReset();
                                       }
                                     },
                                     icon: Icon(
-                                      Icons.arrow_forward,
+                                      Icons.arrow_forward_ios,
                                     )),
                               )
                             ],

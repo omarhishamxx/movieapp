@@ -1,10 +1,12 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:movietest1/Widget/CustomNavBar.dart';
-import 'package:movietest1/Widget/Upcomingwidget.dart';
-
-import '../Widget/NewMoviesWidget.dart';
+import 'package:movietest1/Widget/navbar.dart';
+import 'package:movietest1/Widget/widget.dart';
+import 'package:movietest1/pages/pages.dart';
 
 class HomePage extends StatelessWidget {
+  //final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +23,10 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Movie Night",
+                          "Welcome " //+ user.email!
+                          ,
                           style: TextStyle(
-                            color: Color.fromARGB(255, 229, 43, 20),
+                            color: Color.fromARGB(255, 229, 43, 18),
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
                           ),
@@ -53,7 +56,7 @@ class HomePage extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   color: Color(0xFF292B37),
-                  borderRadius: BorderRadius.circular(11),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(children: [
                   Icon(
@@ -87,7 +90,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomNavBar(),
+      //bottomNavigationBar: CustomNavBar(),
     );
   }
 }

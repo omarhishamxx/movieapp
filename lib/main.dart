@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:movietest1/pages/Adminpan.dart';
-import 'package:movietest1/pages/FavPage.dart';
-import 'package:movietest1/pages/HomePage.dart';
-import 'package:movietest1/pages/Login.dart';
-import 'package:movietest1/pages/RecommPage.dart';
-import 'package:movietest1/pages/Signup.dart';
-import 'package:movietest1/pages/UserPage.dart';
-import 'package:movietest1/pages/register.dart';
-import 'pages/forgetpassword.dart';
+import 'package:movietest1/Auth/auth.dart';
+import 'package:movietest1/Widget/navbar.dart';
+import 'package:movietest1/pages/pages.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:movietest1/pages/test.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -29,19 +27,27 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: AuthPage(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: Color(0xFF0F111D)),
+      theme:
+          ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 32, 26, 48)),
+      //initialRoute: 'WelcomeScreen',
       routes: {
-        "/": (context) => HomePage(),
-        "RecommPage": (context) => RecommPage(),
+        "Homepage": (context) => HomePage(),
+        "WelcomeScreen": (context) => WelcomeScreen(),
+        "RecommPage": (context) => CategoryPage(),
         "FavPage": (context) => FavPage(),
-        "UserPage": (context) => UserPage(),
+        "Userpage": (context) => Userpage(),
         "MyLogin": (context) => MyLogin(),
-        "signupScreen": (context) => signupScreen(),
         "MyRegister": (context) => MyRegister(),
         "Forgetpass": (context) => Forgetpass(),
         "AdminPan": (context) => AdminPan(),
-        //test
+        "loWelcomeScreen": (context) => loWelcomeScreen(),
+        "navi": (context) => Navi(),
+        "Auth": (context) => AuthPage(),
+        "LoginNew": (context) => LoginNew(),
+        "RegisterNew": (context) => RegisterNew(),
+        "ForgetNew": (context) => ForgetNew(),
       },
     );
   }

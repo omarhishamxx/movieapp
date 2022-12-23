@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:movietest1/Widget/widget.dart';
 import 'package:movietest1/pages/pages.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
@@ -10,6 +12,23 @@ class MyLogin extends StatefulWidget {
 
 class _MyLoginState extends State<MyLogin> {
   final formkey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  Future SignIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
+    Navigator.pushNamed(context, "/");
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,7 +47,7 @@ class _MyLoginState extends State<MyLogin> {
             SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.2),
+                    top: MediaQuery.of(context).size.height * 0.1),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -37,7 +56,8 @@ class _MyLoginState extends State<MyLogin> {
                       padding: EdgeInsets.only(top: 10, left: 20),
                       child: Text(
                         'Welcome\nBack',
-                        style: TextStyle(color: Colors.white, fontSize: 33),
+                        style: GoogleFonts.pacifico(
+                            color: Colors.white, fontSize: 33),
                       ),
                     ),
                     SizedBox(height: 20),
@@ -46,10 +66,11 @@ class _MyLoginState extends State<MyLogin> {
                       padding: EdgeInsets.only(left: 20, bottom: 20),
                       child: Text(
                         'Sign in:',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 27,
-                            fontWeight: FontWeight.w700),
+                        style: GoogleFonts.pacifico(
+                          color: Colors.white,
+                          fontSize: 27,
+                          //fontWeight: FontWeight.w700
+                        ),
                       ),
                     )),
                     Container(
@@ -61,6 +82,7 @@ class _MyLoginState extends State<MyLogin> {
                             child: Column(
                               children: [
                                 TextFormField(
+                                  controller: _emailController,
                                   validator: (value) {
                                     if (value!.isEmpty ||
                                         !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
@@ -82,6 +104,7 @@ class _MyLoginState extends State<MyLogin> {
                                   height: 30,
                                 ),
                                 TextFormField(
+                                  controller: _passwordController,
                                   validator: (value) {
                                     if (value!.isEmpty ||
                                         !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
@@ -103,8 +126,24 @@ class _MyLoginState extends State<MyLogin> {
                               ],
                             ),
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, "Forgetpass");
+                                  },
+                                  child: Text(
+                                    'Forget Password?',
+                                    style: GoogleFonts.pacifico(
+                                      color: Colors.red,
+                                      fontSize: 15,
+                                    ),
+                                  )),
+                            ],
+                          ),
                           SizedBox(
-                            height: 30,
+                            height: 20,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,11 +158,7 @@ class _MyLoginState extends State<MyLogin> {
                                     color: Colors.white,
                                     onPressed: () {
                                       if (formkey.currentState!.validate()) {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    HomePage()));
+                                        SignIn();
                                       }
                                     },
                                     icon: Icon(
@@ -132,44 +167,39 @@ class _MyLoginState extends State<MyLogin> {
                               )
                             ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'MyRegister');
-                                },
-                                child: Text(
-                                  'Sign Up',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 18),
+                          Column(children: [
+                            Text(" OR ",
+                                style: GoogleFonts.pacifico(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25)),
+                            Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/google.png"),
+                                  //fit: BoxFit.cover
                                 ),
-                                style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    backgroundColor:
-                                        Color.fromARGB(255, 186, 0, 35)),
                               ),
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30)),
-                                      backgroundColor:
-                                          Color.fromARGB(255, 186, 0, 35)),
+                            ),
+                          ]),
+                          Row(
+                            children: [
+                              Text(
+                                "Not a member? ",
+                                style: GoogleFonts.pacifico(
+                                    color: Colors.white,
+                                    //fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                              TextButton(
                                   onPressed: () {
-                                    Navigator.pushNamed(context, "Forgetpass");
+                                    Navigator.pushNamed(context, "MyRegister");
                                   },
                                   child: Text(
-                                    'Forgot Password',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 18,
+                                    'Register now',
+                                    style: GoogleFonts.pacifico(
+                                      color: Colors.red,
+                                      fontSize: 20,
                                     ),
                                   )),
                             ],

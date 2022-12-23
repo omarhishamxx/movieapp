@@ -46,7 +46,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 padding: EdgeInsets.symmetric(horizontal: 19, vertical: 13),
                 child: Column(
                   children: [
-                    for (int i = 1; i < 11; i++)
+                    for (int i = 1; i <= 14; i++)
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 10),
                         child: Row(
@@ -60,7 +60,7 @@ class _CategoryPageState extends State<CategoryPage> {
                               ]),
                               child: ClipRRect(
                                 child: Image.asset(
-                                  'images/$i.jpeg',
+                                  'images/$i.png',
                                   width: 90,
                                   height: 90,
                                   fit: BoxFit.cover,

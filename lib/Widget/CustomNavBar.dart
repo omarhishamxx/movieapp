@@ -48,16 +48,6 @@ class CustomNavBar extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, "AdminPan");
-            },
-            child: Icon(
-              Icons.admin_panel_settings,
-              size: 35,
-              color: Colors.white,
-            ),
-          ),
-          InkWell(
-            onTap: () {
               Navigator.pushNamed(context, "MyLogin");
             },
             child: Icon(
