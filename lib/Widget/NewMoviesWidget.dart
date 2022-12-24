@@ -63,9 +63,9 @@ class NewMoviesWidget extends StatelessWidget {
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
                               topRight: Radius.circular(10)),
-                          child: Image.network(
-                            Constants.imagebaseurl+ jsonRes.result[0].posterPath;
-                          ),
+                          /*child: Image.network(
+                           Constants.imagebaseurl+ jsonRes.result[0].posterPath;
+                          ),*/
                         ),
                         Padding(
                           padding:
