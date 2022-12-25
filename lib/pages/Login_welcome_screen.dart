@@ -73,16 +73,18 @@ class loWelcomeScreen extends StatelessWidget {
                       ),
                     ),
                     */
-                    Row(children: [
-                      Image.asset(
-                        "images/movie-countdown-venom.gif",
-                        scale: 2.5,
-                      ),
-                      Image.asset(
-                        "images/its-movie-time-chatime.gif",
-                        scale: 2.5,
-                      ),
-                    ]),
+                    SingleChildScrollView(
+                      child: Row(children: [
+                        Image.asset(
+                          "images/movie-countdown-venom.gif",
+                          scale: 2.5,
+                        ),
+                        Image.asset(
+                          "images/its-movie-time-chatime.gif",
+                          scale: 2.5,
+                        ),
+                      ]),
+                    ),
                     SizedBox(
                       height: 70,
                     ),
